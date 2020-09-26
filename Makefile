@@ -1,5 +1,4 @@
 ROOT := test_dir
-DOCKERID := kbrafford
 APPNAME := spew
 
 spew: spew.c 
