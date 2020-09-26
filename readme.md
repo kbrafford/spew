@@ -14,6 +14,6 @@ The concept can be adapted to anything that works in the same fashion--it doesn'
 |docker|Find more detailed docker instructions to set it up properly for use without elevated permissions
 
 ## Usage
-make -- builds a docker container with the repo's test_dir bundled up
-make ROOT=other_path -- builds a docker container with a different root directory bundled up
+ * make -- builds a docker container with the repo's test_dir bundled up
+ * make ROOT=other_path -- builds a docker container with a different root directory bundled up
 
