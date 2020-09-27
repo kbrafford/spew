@@ -1,4 +1,4 @@
-# SPEW
+#SPEW
 
 Spew builds a lean linux executable that simply dumps the contents of a gzipped tarball to stdout. The purpose is to allow the user to bundle up a directory structure and run it as a deployable Docker container that unbundles a directory tree with a simple command fetching it from the Dockerhub, like so:
 
@@ -10,7 +10,6 @@ The concept can be adapted to anything that works in the same fashion--it doesn'
 ## Requirements
 |package | directions  |
 |--|--|
-|musl-gcc  | sudo apt-get install musl-tools  |
 |docker|Find more detailed docker instructions to set it up properly for use without elevated permissions
 
 ## Usage
