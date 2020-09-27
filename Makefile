@@ -1,12 +1,16 @@
 ROOT := test_dir
 APPNAME := spew
 
+CC = docker run -it -v `pwd`:/work kbrafford/musl-gcc musl-gcc
+LD = docker run -it -v `pwd`:/work kbrafford/musl-gcc ld
+STRIP = docker run -it -v `pwd`:/work kbrafford/musl-gcc strip
+
 spew: spew.c 
 	tar -zcvf archive.tar.gz $(ROOT)
 	mv archive.tar.gz resource.bin
-	ld -r -b binary -o binary.o resource.bin
-	musl-gcc -Os -fdata-sections -ffunction-sections -s binary.o -Wl,--gc-sections -static -o spew spew.c
-	strip --strip-all --remove-section=.comment spew
+	$(LD) -r -b binary -o /work/binary.o /work/resource.bin
+	$(CC) -Os -fdata-sections -ffunction-sections -s /work/binary.o -Wl,--gc-sections -static -o /work/spew /work/spew.c
+	$(STRIP) --strip-all --remove-section=.comment /work/spew
 	docker build -t $(APPNAME) .
 
 clean:
