@@ -22,7 +22,8 @@ int spew_resource(char *ptr, int len)
   return 0;
 }
 
-int main(void) {
+int main(void)
+{
   spew_resource(_binary__work_resource_bin_start, (unsigned int)(_binary__work_resource_bin_end - _binary__work_resource_bin_start));
 
   return 0;
