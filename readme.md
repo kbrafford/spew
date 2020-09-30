@@ -1,9 +1,9 @@
 # SPEW
 
-Spew builds a lean linux executable that simply dumps the contents of a gzipped tarball to stdout. The purpose is to allow the user to bundle up a directory structure and run it as a deployable Docker container that unbundles a directory tree with a simple command fetching it from the Dockerhub, like so:
+Spew builds a lean linux executable that simply dumps the contents of a gzipped tarball to stdout. The purpose is to allow the user to bundle up a directory structure and offer it as a deployable Docker container that unbundles a directory tree with a simple command fetching it from the Dockerhub, like so:
 
     docker run kbrafford/spew | tar zxf -
-The concept can be adapted to anything that works in the same fashion--it doesn't need to be a tarball. I've done a similar thing with a Python class that is a self-contained zip file:
+The concept can be adapted to anything that works in the same fashion--it doesn't need to be a tarball. A somewhat similar "data-smuggling" solution with a Python class that is a self-contained zip file has also been done:
 
 [https://github.com/kbrafford/PyEmbeddedAssetManager](https://github.com/kbrafford/PyEmbeddedAssetManager)
 
